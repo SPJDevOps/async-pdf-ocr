@@ -1,0 +1,50 @@
+# Async HTTP Api for OCRmyPDF
+
+# Project Overview
+
+This project is a production-ready, Kubernetes-deployable, application with:
+
+- Backend: Python 3.13 using FastAPI (async-first design)
+- Deployment: Docker + Kubernetes
+- Operation mode: Must support fully offline / air-gapped environments
+
+This API enables integration of the popular and great working library ocrmypdf for python into modern and cloud-native
+workflows and infrastructures.
+
+---
+
+# Core Architectural Principles
+
+1. Async-first backend (FastAPI async endpoints everywhere).
+2. Strict environment-based configuration (no hardcoded values).
+3. Offline-capable deployment.
+4. Kubernetes-native design.
+
+---
+
+# Backend Requirements (FastAPI)
+
+## Python Version
+
+Python 3.13 required.
+
+## Async Requirements (MANDATORY)
+
+- All endpoints must be async.
+- ocrmypdf lib usage must be async.
+- No blocking I/O inside request handlers.
+- Use async file iteration when possible.
+
+
+## Example usage
+
+- integration into automation tools such as Apache NiFi through InvokeHTTP
+- call from N8N Workflows to get readable PDFs
+
+
+## other
+
+- if there are useful paramaters for ocrmypdf operations, we should enable access to those through optional query params
+- this project is open-source on Github. So commit messages and releases should be well written, README.md should be 
+nice to read and enable easy access to get started (e.g. using Docker). 
+- we will also use github actions to build releases
