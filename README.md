@@ -41,6 +41,9 @@ Async HTTP API for OCRmyPDF: minimal async-first FastAPI service with Docker/Kub
 
 ## Docker (Local)
 
+The container image includes OCRmyPDF's runtime tools, including optional
+optimizers (`jbig2`, `pngquant`) to avoid degraded compression warnings.
+
 Build the image:
 
 ```bash
@@ -75,6 +78,9 @@ curl -X POST "http://127.0.0.1:8000/ocr?language=eng&deskew=true&force_ocr=false
 - `deskew` (optional bool, default `false`)
 - `force_ocr` (optional bool, default `false`)
 - `optimize` (optional int `0-3`)
+
+For non-Docker installs, make sure OCRmyPDF's system dependencies are available
+on `PATH`, including optional optimizers such as `jbig2` and `pngquant`.
 
 ## QR Code Endpoint
 

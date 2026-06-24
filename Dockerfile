@@ -11,6 +11,7 @@ WORKDIR /app
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         ghostscript \
+        jbig2 \
         tesseract-ocr \
         qpdf \
         pngquant \
